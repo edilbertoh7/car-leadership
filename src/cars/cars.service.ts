@@ -5,23 +5,31 @@ import { CreateCarDto, UpdateCarDto } from './dto';
 
 @Injectable()
 export class CarsService {
+  // private cars: Car[] = [
+    // {
+    //   id: uuid(),
+    //   brand: 'Toyota',
+    //   model: 'Corolla',
+    // },
+    // {
+    //   id: uuid(),
+    //   brand: 'Honda',
+    //   model: 'Civic',
+    // },
+    // {
+    //   id: uuid(),
+    //   brand: 'leep',
+    //   model: 'cherokee',
+    // },
+  // ];
   private cars: Car[] = [
-    {
-      id: uuid(),
-      brand: 'Toyota',
-      model: 'Corolla',
-    },
-    {
-      id: uuid(),
-      brand: 'Honda',
-      model: 'Civic',
-    },
-    {
-      id: uuid(),
-      brand: 'leep',
-      model: 'cherokee',
-    },
-  ];
+      // {
+      //   id: uuid(),
+      //   name: 'pollito',
+      //   createdAt: Date.now(),
+      //   // createdAt: new Date().getTime(),
+      // }
+    ];
 
   findAll() {
     return this.cars; // retorna el arreglo de autos
@@ -69,4 +77,11 @@ export class CarsService {
     return "eliminado carro con id: " + id; //regresa un mensaje de que se elimino el auto
   
   }
+
+  fillCarsWithSeedData(cars: Car[]){
+    console.log('fillCarsWithSeedData', cars);
+    this.cars = cars;
+    
+      // this.cars = cars;
+    }
 }
